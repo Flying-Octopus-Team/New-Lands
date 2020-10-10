@@ -1,6 +1,12 @@
 extends Node2D
 
 
+"""
+The way map generation works is that it gets a set amount of points that it can spend on placing rooms.
+Harder rooms cost more, so player won't get unfair runs, where there is a lot of hard levels.
+"""
+
+
 signal map_drawn()
 
 export var points = 15
