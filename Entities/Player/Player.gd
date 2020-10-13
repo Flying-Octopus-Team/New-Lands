@@ -2,9 +2,13 @@ extends KinematicBody2D
 
 export var health = 100
 export var movement_speed = 300
+export var damage_modifier = 0
+export var magic_bonus = 0
 
+onready var weapon : Node2D
 onready var  animationTree = $AnimationTree
 onready var animationState = animationTree.get('parameters/playback')
+
 
 func listen_inputs(delta):
 	var velocity = Vector2()

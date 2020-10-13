@@ -1,12 +1,13 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Entities/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Entities/Player/graphics/player_spritesheet.jpg" type="Texture" id=2]
+[ext_resource path="res://Items/Weapons/shared/Weapon.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19.8523, 20.6278 )
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id=2]
 resource_name = "AttackDown"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -303,11 +304,11 @@ transitions = [ "Standing", "Moving", SubResource( 30 ), "Moving", "Standing", S
 start_node = "Standing"
 graph_offset = Vector2( 0, 58.256 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=37]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=36]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
-movement_speed = 3000
+movement_speed = 900
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 19.9782, 20.2856 )
@@ -317,9 +318,10 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 4
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/AttackDown = SubResource( 36 )
+anims/AttackDown = SubResource( 2 )
 anims/AttackLeft = SubResource( 3 )
 anims/AttackRight = SubResource( 4 )
 anims/AttackUp = SubResource( 5 )
@@ -337,11 +339,13 @@ anims/StandingUp = SubResource( 14 )
 tree_root = SubResource( 35 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 37 )
+parameters/playback = SubResource( 36 )
 parameters/Attack/blend_position = Vector2( 0, 0 )
 parameters/Moving/blend_position = Vector2( 0, 0 )
 parameters/Standing/blend_position = Vector2( 0, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 10, 10 )
+zoom = Vector2( 3, 3 )
+
+[node name="Weapon" parent="." instance=ExtResource( 3 )]
