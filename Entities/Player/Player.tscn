@@ -318,7 +318,6 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 4
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AttackDown = SubResource( 2 )
@@ -349,3 +348,4 @@ current = true
 zoom = Vector2( 3, 3 )
 
 [node name="Weapon" parent="." instance=ExtResource( 3 )]
+hp_modifier = 10
