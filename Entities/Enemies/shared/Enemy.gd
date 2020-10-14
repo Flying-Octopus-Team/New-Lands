@@ -11,6 +11,9 @@ var target_cords = Vector2(0, 0)
 var player_reference = null
 var is_attacking = false
 
+func _ready():
+	$HitboxArea.connect("get_damage", self, "take_damage")
+
 func _process(delta):
 	if(animationState.get_current_node() != "Attack"):
 		is_attacking = false
@@ -49,4 +52,12 @@ func chase_player(delta):
 	if(collision):
 		is_attacking = true
 		attack()
+	
+func take_damage(dmg):
+	health -= dmg
+	if health <= 0:
+		die()
+		
+func die():
+	self.queue_free()
 	
