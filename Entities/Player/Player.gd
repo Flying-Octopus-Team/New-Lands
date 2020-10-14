@@ -37,6 +37,9 @@ func attack():
 	animationTree.set('parameters/Attack/blend_position', mouse_vector)
 	animationState.travel("Attack")
 	
+	get_node("Weapon/AnimationTree").set('parameters/Attack/blend_position', mouse_vector)
+	get_node("Weapon/AnimationTree").get('parameters/playback').travel("Attack")
+	
 func rotate_to_mouse(velocity):
 	var mouse_pos = get_global_mouse_position()
 	var mouse_vector = mouse_pos - self.global_position
