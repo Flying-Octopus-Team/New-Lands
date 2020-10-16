@@ -378,4 +378,3 @@ shape = SubResource( 37 )
 [editable path="Weapon"]
 
 [editable path="HitboxArea"]
-
