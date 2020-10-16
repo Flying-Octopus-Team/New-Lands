@@ -10,6 +10,8 @@ onready var weapon = $Weapon
 onready var  animationTree = $AnimationTree
 onready var animationState = animationTree.get('parameters/playback')
 
+var alive = true
+
 var Item = preload("res://Items/shared/Item.tscn")
 
 onready var items = {
@@ -24,6 +26,13 @@ onready var items = {
 	"necklace": null
 }
 
+func _ready():
+	$HitboxArea.connect("get_damage", self, "take_damage")
+	
+	for item in items.keys():
+		item = items[item]
+		if item != null:
+			apply_items_modifiers(item)
 
 func listen_inputs(delta):
 	var velocity = Vector2()
@@ -83,13 +92,16 @@ func apply_items_modifiers(item):
 	damage_modifier += item.damage_modifier
 	attack_speed_modifier += item.attack_speed_modifier
 
-
-func _ready():
-	for item in items.keys():
-		item = items[item]
-		if item != null:
-			apply_items_modifiers(item)
-
-
 func _process(delta):
 	listen_inputs(delta)
+	
+func take_damage(dmg):
+	health -= dmg
+	if health <= 0:
+		die()
+		
+func die():
+	alive = false
+	self.set_deferred("disabled", true)
+	self.visible = false
+	set_process(false)
