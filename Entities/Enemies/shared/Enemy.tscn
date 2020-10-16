@@ -473,6 +473,7 @@ script = ExtResource( 2 )
 texture = ExtResource( 1 )
 vframes = 12
 hframes = 5
+frame = 1
 
 [node name="AggroArea" type="Area2D" parent="."]
 
