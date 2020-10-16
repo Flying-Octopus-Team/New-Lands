@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Items/shared/Item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Items/Weapons/Swords/graphics/rare_sword.png" type="Texture" id=2]
+
+[node name="Item" instance=ExtResource( 1 )]
+type = 6
+texture = ExtResource( 2 )
+rarity = 1
