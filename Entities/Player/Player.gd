@@ -5,10 +5,14 @@ export var movement_speed = 300
 export var damage_modifier = 0
 export var magic_bonus = 0
 
+var alive = true
+
 onready var weapon : Node2D
 onready var  animationTree = $AnimationTree
 onready var animationState = animationTree.get('parameters/playback')
 
+func _ready():
+	$HitboxArea.connect("get_damage", self, "take_damage")
 
 func listen_inputs(delta):
 	var velocity = Vector2()
@@ -55,4 +59,15 @@ func rotate_to_mouse(velocity):
 
 func _process(delta):
 	listen_inputs(delta)
+	
+func take_damage(dmg):
+	health -= dmg
+	if health <= 0:
+		die()
+		
+func die():
+	alive = false
+	self.set_deferred("disabled", true)
+	self.visible = false
+	set_process(false)
 	

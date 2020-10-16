@@ -12,11 +12,14 @@ var player_reference = null
 var is_attacking = false
 
 func _ready():
-	$HitboxArea.connect("get_damage", self, "take_damage")
+	$HitboxArea.connect("deal_damage", self, "take_damage")
 
 func _process(delta):
 	if(animationState.get_current_node() != "Attack"):
 		is_attacking = false
+		
+	if(seen_player == true and player_reference.alive == false):
+		seen_player = false
 		
 	if(seen_player and !is_attacking):
 		rotate_to_player()
@@ -29,6 +32,9 @@ func attack():
 	var vector = player_reference.global_position - self.global_position
 	animationTree.set('parameters/Attack/blend_position', vector)
 	animationState.travel("Attack")
+	
+	get_node("EnemyAttackHitbox/AnimationTree").set('parameters/Attack/blend_position', vector)
+	get_node("EnemyAttackHitbox/AnimationTree").get('parameters/playback').travel("Attack")
 	
 func rotate_to_player():
 	var vector = player_reference.global_position - self.global_position

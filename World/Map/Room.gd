@@ -4,7 +4,7 @@ var points
 # Dictionary of enemies that can spawn in rooms. Format is preloaded monster: cost
 # This only applies to normal enemies, bosses will be handled in different way
 var enemies = {
-	preload("res://Entities/Enemies/shared/Enemy.tscn"): 3,
+	preload("res://Entities/Enemies/Dog/Dog.tscn"): 3,
 }
 
 
