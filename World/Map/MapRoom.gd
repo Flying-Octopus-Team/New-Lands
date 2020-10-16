@@ -33,8 +33,8 @@ func get_enemy_points():
 		"empty", "entrance", "boss":
 			return 0
 		"small":
-			return 3
+			return 8
 		"medium":
-			return 5
+			return 20
 		"large":
-			return 10
+			return 40

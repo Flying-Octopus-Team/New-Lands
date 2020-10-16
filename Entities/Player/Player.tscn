@@ -332,7 +332,7 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 5
-
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AttackDown = SubResource( 2 )
@@ -369,4 +369,3 @@ position = Vector2( 5.26312, 47.3683 )
 shape = SubResource( 37 )
 
 [editable path="HitboxArea"]
-
