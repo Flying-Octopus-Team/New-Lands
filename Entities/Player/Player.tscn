@@ -1,5 +1,6 @@
 [gd_scene load_steps=43 format=2]
 
+
 [ext_resource path="res://Entities/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Entities/Player/graphics/player_spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Items/Weapons/Swords/BaseSword.tscn" type="PackedScene" id=4]
@@ -377,3 +378,4 @@ shape = SubResource( 37 )
 [editable path="Weapon"]
 
 [editable path="HitboxArea"]
+
