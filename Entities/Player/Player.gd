@@ -17,11 +17,7 @@ var items = EquipmentManager.worn_items
 
 func _ready():
 	$HitboxArea.connect("get_damage", self, "take_damage")
-	
-	for item in items.keys():
-		item = items[item]
-		if item != null:
-			apply_items_modifiers(item)
+	apply_items_modifiers()
 
 func listen_inputs(delta):
 	var velocity = Vector2()
@@ -87,9 +83,6 @@ func apply_item_modifiers(item):
 	magic_bonus += item.magic_modifier
 	damage_modifier += item.damage_modifier
 	attack_speed_modifier += item.attack_speed_modifier
-
-func _ready():
-	apply_items_modifiers()
 
 func _process(delta):
 	listen_inputs(delta)
