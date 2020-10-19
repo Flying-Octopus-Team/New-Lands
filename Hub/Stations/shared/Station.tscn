@@ -4,10 +4,10 @@
 [ext_resource path="res://Hub/Stations/shared/Station.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 78.0102, 74.6338 )
+extents = Vector2( 150.688, 114.678 )
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 200.0
+radius = 363.043
 
 [node name="Station" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -24,15 +24,8 @@ shape = SubResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRange"]
 shape = SubResource( 2 )
 
-[node name="ProximityIndicator" type="ColorRect" parent="."]
+[node name="ProximityIndicator" type="Sprite" parent="."]
 visible = false
-margin_left = -78.0
-margin_top = -73.0
-margin_right = 76.0
-margin_bottom = 73.0
-color = Color( 1, 1, 1, 0.25098 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+z_index = 1
 [connection signal="body_entered" from="DetectionRange" to="." method="_on_DetectionRange_body_entered"]
 [connection signal="body_exited" from="DetectionRange" to="." method="_on_DetectionRange_body_exited"]
