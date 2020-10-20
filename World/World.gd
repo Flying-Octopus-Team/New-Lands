@@ -13,7 +13,7 @@ func _ready():
 	
 func _on_map_drawn():
 	spawn_player()
-	prepare_hub()
+	prepare_hud()
 
 func spawn_player():
 	var Player = preload("res://Entities/Player/Player.tscn")
@@ -22,7 +22,7 @@ func spawn_player():
 	player.global_position = map.get_children()[0].get_node("PlayerSpawn").global_position
 	add_child(player)
 
-func prepare_hub():
+func prepare_hud():
 	# sending reference to the player
 	$HUD.set_player_ref(player)
 	# connecting signals
