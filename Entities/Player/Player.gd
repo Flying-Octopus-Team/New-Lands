@@ -38,7 +38,7 @@ func listen_inputs(delta):
 		velocity = Vector2(0, 0)
 		attack()
 	elif(animationState.get_current_node() != "Attack"):
-		move_and_collide(velocity * delta)
+		move_and_slide(velocity)
 		rotate_to_mouse(velocity)
 	
 	# TODO: Delete this block when testing is over. It's here for development only
