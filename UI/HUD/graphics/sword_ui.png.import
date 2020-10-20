@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/exclamation.png-a7851c23415eab4d06e8ebe6821fa5dc.stex"
+path="res://.import/sword_ui.png-5e2efc6e8978a2820678986d03a33c1a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Hub/Stations/EquipmentStation/exclamation.png"
-dest_files=[ "res://.import/exclamation.png-a7851c23415eab4d06e8ebe6821fa5dc.stex" ]
+source_file="res://UI/HUD/graphics/sword_ui.png"
+dest_files=[ "res://.import/sword_ui.png-5e2efc6e8978a2820678986d03a33c1a.stex" ]
 
 [params]
 
