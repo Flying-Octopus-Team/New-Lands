@@ -10,6 +10,7 @@ bg_color = Color( 0.219608, 0.137255, 0.0588235, 1 )
 bg_color = Color( 0.152941, 0.0941176, 0.0509804, 1 )
 
 [node name="EquipmentScreen" type="CanvasLayer"]
+layer = 2
 script = ExtResource( 1 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]

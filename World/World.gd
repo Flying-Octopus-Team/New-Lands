@@ -13,11 +13,17 @@ func _ready():
 	
 func _on_map_drawn():
 	spawn_player()
-
+	prepare_hud()
 
 func spawn_player():
 	var Player = preload("res://Entities/Player/Player.tscn")
-	var player = Player.instance()
+	player = Player.instance()
 	# Only first room has node that marks player spawnpoint
 	player.global_position = map.get_children()[0].get_node("PlayerSpawn").global_position
 	add_child(player)
+
+func prepare_hud():
+	# sending reference to the player
+	$HUD.set_player_ref(player)
+	# connecting signals
+	player.connect('hp_changed', $HUD, 'on_player_hp_changed')

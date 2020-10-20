@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Hub/Stations/shared/Station.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Hub/Stations/EquipmentStation/EquipmentStation.gd" type="Script" id=2]
-[ext_resource path="res://Hub/Stations/EquipmentStation/chest.png" type="Texture" id=3]
-[ext_resource path="res://Hub/Stations/EquipmentStation/exclamation.png" type="Texture" id=4]
+[ext_resource path="res://Hub/Stations/graphics/exclamation.png" type="Texture" id=3]
+[ext_resource path="res://Hub/Stations/graphics/chest.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 150.052, 115.145 )
@@ -12,7 +12,7 @@ extents = Vector2( 150.052, 115.145 )
 script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( -0.0475159, 35.1975 )
@@ -20,4 +20,4 @@ shape = SubResource( 1 )
 
 [node name="ProximityIndicator" parent="." index="3"]
 position = Vector2( 0, -176.347 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
