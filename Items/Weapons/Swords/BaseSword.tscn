@@ -10,6 +10,8 @@ extents = Vector2( 10, 77 )
 [node name="BaseSword" instance=ExtResource( 1 )]
 position = Vector2( 40, -2 )
 rotation = 2.61799
+item_name = "Base Sword"
+z_index = 1
 damage = 50
 attack_speed = 0.5
 attack_width = 150
@@ -17,7 +19,6 @@ attack_range = 14
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource( 1 )
-disabled = false
 
 [node name="AnimationTree" parent="." index="3"]
 parameters/playback = SubResource( 2 )

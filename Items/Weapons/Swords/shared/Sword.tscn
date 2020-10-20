@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Items/Weapons/shared/Weapon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Items/Weapons/Swords/graphics/base_sword.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "SwordAttackDown"
@@ -355,6 +356,7 @@ visible = false
 position = Vector2( -31.263, 38.8 )
 rotation = 4.36332
 z_index = 1
+texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" parent="." index="0"]
 anims/SwordAttackDown = SubResource( 1 )

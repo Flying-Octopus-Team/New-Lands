@@ -13,46 +13,46 @@ script = ExtResource( 2 )
 [node name="Spawnpoints" type="Node" parent="."]
 
 [node name="Position2D" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 1429.43, 4658.11 )
+position = Vector2( 2714.11, 4433.94 )
 
 [node name="Position2D2" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 2786.26, 1406.75 )
+position = Vector2( 2889.72, 1855.09 )
 
 [node name="Position2D3" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 1188.93, 490.092 )
+position = Vector2( 1292.39, 2533.51 )
 
 [node name="Position2D4" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 471.94, 1080.02 )
+position = Vector2( 618.514, 666.164 )
 
 [node name="Position2D5" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 1742.55, 1388.59 )
+position = Vector2( 1613.22, 1267.88 )
 
 [node name="Position2D6" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 1143.55, 1751.63 )
+position = Vector2( 608.985, 1958.56 )
 
 [node name="Position2D7" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 4294.7, 449.051 )
+position = Vector2( 4501.63, 733.577 )
 
 [node name="Position2D8" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 1442.93, 4325.8 )
+position = Vector2( 2262.02, 3213.56 )
 
 [node name="Position2D9" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 3240.05, 3594.01 )
+position = Vector2( 3205.56, 3542.28 )
 
 [node name="Position2D10" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 3938.89, 3004.08 )
+position = Vector2( 2542.12, 512.319 )
 
 [node name="Position2D11" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 3683.56, 1415.37 )
+position = Vector2( 3536.99, 1579.19 )
 
 [node name="Position2D12" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 3972.06, 2402.21 )
+position = Vector2( 3808.24, 2479.81 )
 
 [node name="Position2D13" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 4338.22, 1751.63 )
+position = Vector2( 4502.04, 1561.95 )
 
 [node name="Position2D14" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 4292.84, 3984.27 )
+position = Vector2( 628.485, 2544.39 )
 
 [node name="Position2D15" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 3721.07, 4311 )
+position = Vector2( 3867.64, 4474.82 )

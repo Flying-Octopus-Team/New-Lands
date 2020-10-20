@@ -16,43 +16,43 @@ script = ExtResource( 2 )
 position = Vector2( 2383.72, 3511.69 )
 
 [node name="Position2D2" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 3389.64, 813.959 )
+position = Vector2( 3501.73, 1934.82 )
 
 [node name="Position2D3" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 1753.67, 1284.53 )
+position = Vector2( 1951.98, 1275.91 )
 
 [node name="Position2D4" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 480.938, 1796.13 )
+position = Vector2( 644.757, 890.817 )
 
 [node name="Position2D5" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 1640.4, 2253.43 )
+position = Vector2( 1295.52, 2184.45 )
 
 [node name="Position2D6" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 815.931, 3287.06 )
+position = Vector2( 634.869, 3174.97 )
 
 [node name="Position2D7" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 2229.99, 2691.07 )
+position = Vector2( 2040.31, 2372.05 )
 
 [node name="Position2D8" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 2302.47, 2234.1 )
+position = Vector2( 2862.9, 2225.48 )
 
 [node name="Position2D9" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 4340.42, 1546.23 )
+position = Vector2( 4461.13, 1546.23 )
 
 [node name="Position2D10" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 3687.48, 1576.09 )
+position = Vector2( 3868.54, 2696.95 )
 
 [node name="Position2D11" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 4519.82, 854.336 )
+position = Vector2( 4450.84, 983.666 )
 
 [node name="Position2D12" type="Position2D" parent="Spawnpoints"]
 position = Vector2( 2154.52, 4489.68 )
 
 [node name="Position2D13" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 486.672, 3165.86 )
+position = Vector2( 659.112, 2579.56 )
 
 [node name="Position2D14" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 4049.37, 4026.61 )
+position = Vector2( 3480.32, 4492.2 )
 
 [node name="Position2D15" type="Position2D" parent="Spawnpoints"]
 position = Vector2( 3420.44, 3159.29 )

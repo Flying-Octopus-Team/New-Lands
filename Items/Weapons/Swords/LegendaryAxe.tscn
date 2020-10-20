@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Items/Weapons/Swords/shared/Sword.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Items/Weapons/Swords/graphics/rare_sword.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 77 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=2]
+
+[node name="LegendaryAxe" instance=ExtResource( 1 )]
+position = Vector2( 40, -2 )
+rotation = 2.61799
+type = 1
+item_name = "Legendary Axe"
+texture = ExtResource( 2 )
+rarity = 4
+hp_modifier = 10
+damage = 50
+attack_speed = 0.5
+attack_width = 150
+attack_range = 14
+
+[node name="CollisionShape2D" parent="." index="2"]
+shape = SubResource( 1 )
+
+[node name="AnimationTree" parent="." index="3"]
+parameters/playback = SubResource( 2 )

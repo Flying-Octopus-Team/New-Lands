@@ -10,20 +10,14 @@ onready var weapon = $Weapon
 onready var  animationTree = $AnimationTree
 onready var animationState = animationTree.get('parameters/playback')
 
-var Item = preload("res://Items/shared/Item.tscn")
 
-onready var items = {
-	"sword": $Weapon, 
-	"axe": null, 
-	"spear": null, 
-	"chestplate": null, 
-	"helmet": null, 
-	"leggings": null, 
-	"boots": null, 
-	"ring": null,
-	"necklace": null
-}
+var alive = true
 
+var items = EquipmentManager.worn_items
+
+func _ready():
+	$HitboxArea.connect("get_damage", self, "take_damage")
+	apply_items_modifiers()
 
 func listen_inputs(delta):
 	var velocity = Vector2()
@@ -46,7 +40,7 @@ func listen_inputs(delta):
 		rotate_to_mouse(velocity)
 	
 	# TODO: Delete this block when testing is over. It's here for development only
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_home"):
 		print("health: ", health)
 		print("movement_speed: ", movement_speed)
 		print("damage_modifier: ", damage_modifier)
@@ -76,20 +70,30 @@ func rotate_to_mouse(velocity):
 		animationState.travel("Standing")
 
 
-func apply_items_modifiers(item):
+func apply_items_modifiers():
+	for item in items.keys():
+		item = items[item]
+		if item != null:
+			apply_item_modifiers(item)
+
+
+func apply_item_modifiers(item):
 	health += item.hp_modifier
 	movement_speed += item.speed_modifier
 	magic_bonus += item.magic_modifier
 	damage_modifier += item.damage_modifier
 	attack_speed_modifier += item.attack_speed_modifier
 
-
-func _ready():
-	for item in items.keys():
-		item = items[item]
-		if item != null:
-			apply_items_modifiers(item)
-
-
 func _process(delta):
 	listen_inputs(delta)
+	
+func take_damage(dmg):
+	health -= dmg
+	if health <= 0:
+		die()
+		
+func die():
+	alive = false
+	self.set_deferred("disabled", true)
+	self.visible = false
+	set_process(false)

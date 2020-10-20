@@ -13,10 +13,10 @@ script = ExtResource( 2 )
 [node name="Spawnpoints" type="Node" parent="."]
 
 [node name="Position2D" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 2269.04, 2921.94 )
+position = Vector2( 2269.04, 2878.83 )
 
 [node name="Position2D2" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 2390.35, 1649.43 )
+position = Vector2( 2580.03, 1614.94 )
 
 [node name="Position2D3" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 2834.88, 2750.71 )
+position = Vector2( 2903.86, 2880.04 )

@@ -1,10 +1,13 @@
 [gd_scene load_steps=43 format=2]
 
+
 [ext_resource path="res://Entities/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Entities/Player/graphics/player_spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Items/Weapons/shared/Weapon.gd" type="Script" id=3]
 [ext_resource path="res://Items/Weapons/Swords/BaseSword.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Entities/shared/HitboxArea.tscn" type="PackedScene" id=5]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=38]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 45.7888, 59.2377 )
@@ -325,6 +328,12 @@ rotation = 0.0
 z_index = 0
 script = ExtResource( 3 )
 
+[node name="CollisionShape2D" parent="Weapon" index="2"]
+disabled = true
+
+[node name="AnimationTree" parent="Weapon" index="3"]
+parameters/playback = SubResource( 38 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 4.78693, 99.2097 )
 shape = SubResource( 1 )
@@ -333,6 +342,7 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 5
+
 frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -368,5 +378,8 @@ zoom = Vector2( 3, 3 )
 [node name="CollisionShape2D" parent="HitboxArea" index="0"]
 position = Vector2( 5.26312, 23.7477 )
 shape = SubResource( 37 )
+
+
+[editable path="Weapon"]
 
 [editable path="HitboxArea"]
