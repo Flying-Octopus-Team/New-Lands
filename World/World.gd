@@ -26,4 +26,4 @@ func prepare_hub():
 	# sending reference to the player
 	$HUD.set_player_ref(player)
 	# connecting signals
-	player.get_node("HitboxArea").connect('get_damage', $HUD, 'on_player_get_damage')
+	player.connect('hp_changed', $HUD, 'on_player_hp_changed')

@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal hp_changed
+
 export var health = 100
 export var movement_speed = 300
 export var damage_modifier = 0
@@ -91,6 +93,8 @@ func take_damage(dmg):
 	health -= dmg
 	if health <= 0:
 		die()
+		health = 0
+	emit_signal("hp_changed")
 		
 func die():
 	alive = false
