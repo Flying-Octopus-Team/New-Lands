@@ -22,7 +22,6 @@ config/icon="res://icon.png"
 [autoload]
 
 EquipmentManager="*res://Scripts/EquipmentManager.gd"
-SaveSystem="*res://Scripts/SaveSystem.gd"
 
 [display]
 

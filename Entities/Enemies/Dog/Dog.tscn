@@ -15,9 +15,6 @@ parameters/playback = SubResource( 1 )
 [node name="EnemyAttackHitbox" parent="." index="6"]
 rotation = 2.0944
 
-[node name="CollisionShape2D" parent="EnemyAttackHitbox" index="2"]
-disabled = false
-
 [node name="AnimationTree" parent="EnemyAttackHitbox" index="3"]
 parameters/playback = SubResource( 2 )
 

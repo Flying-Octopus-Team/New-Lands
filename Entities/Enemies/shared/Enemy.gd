@@ -6,12 +6,10 @@ export var damage = 20
 
 onready var  animationTree = $AnimationTree
 onready var animationState = animationTree.get('parameters/playback')
-onready var map = get_parent().get_parent()
 var seen_player = false
 var target_cords = Vector2(0, 0)
 var player_reference = null
 var is_attacking = false
-var path = []
 
 func _ready():
 	$HitboxArea.connect("deal_damage", self, "take_damage")
@@ -22,7 +20,8 @@ func _process(delta):
 		
 	if(seen_player == true and player_reference.alive == false):
 		seen_player = false
-	if(seen_player and !is_attacking and path.size() > 0):
+		
+	if(seen_player and !is_attacking):
 		rotate_to_player()
 		chase_player(delta)
 	else:
@@ -51,32 +50,14 @@ func _on_AggroArea_body_entered(body):
 		target_cords = body.global_position
 		seen_player = true
 		player_reference = body
-		path = get_path_to_target(body)
-		
 
 func chase_player(delta):
-	var target = path[0]
-	var collision = null
-	
-	var distance_to_walk = movement_speed * delta
-	while distance_to_walk > 0 and path.size() > 0:
-		var distance_to_next_point = global_position.distance_to(path[0])
-		if distance_to_walk <= distance_to_next_point:
-			collision = move_and_collide(global_position.direction_to(path[0]).normalized() * movement_speed * delta)
-		else:
-			global_position = path[0]
-			path = get_path_to_target(player_reference)
-			path.remove(0)
-			
-		distance_to_walk -= distance_to_next_point
-	
+	var chase_vector = player_reference.global_position - self.global_position
+	var collision = move_and_collide(chase_vector.normalized() * movement_speed * delta)
 	
 	if(collision):
-		if collision.collider.name == "Player":
-			is_attacking = true
-			attack()
-		else:
-			path = get_path_to_target(player_reference)
+		is_attacking = true
+		attack()
 	
 func take_damage(dmg):
 	health -= dmg
@@ -85,8 +66,4 @@ func take_damage(dmg):
 		
 func die():
 	self.queue_free()
-	
-func get_path_to_target(target):
-	var path = map.get_simple_path(global_position, target.global_position, false)
-	return path
 	
