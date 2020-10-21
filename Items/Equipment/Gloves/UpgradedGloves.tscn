@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Items/shared/Item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Items/Equipment/Gloves/graphics/upgraded_gloves.png" type="Texture" id=2]
+
+[node name="UpgradedGloves" instance=ExtResource( 1 )]
+type = 5
+item_name = "Upgraded Gloves"
+texture = ExtResource( 2 )
+rarity = 1
+attack_speed_modifier = -0.15

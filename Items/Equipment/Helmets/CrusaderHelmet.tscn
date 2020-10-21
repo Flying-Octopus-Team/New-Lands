@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Items/Equipment/Helmets/graphics/crusader_helmet.png" type="Texture" id=1]
+[ext_resource path="res://Items/shared/Item.tscn" type="PackedScene" id=2]
+
+[node name="CrusaderHelmet" instance=ExtResource( 2 )]
+type = 4
+item_name = "Crusader Helmet"
+texture = ExtResource( 1 )
+rarity = 2
+hp_modifier = 24
+speed_modifier = 3
+damage_modifier = 3
+attack_speed_modifier = -0.03
