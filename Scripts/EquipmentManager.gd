@@ -8,7 +8,7 @@ enum TYPES {
 	SPEAR, 
 	CHESTPLATE, 
 	HELMET, 
-	LEGGINGS, 
+	GLOVES, 
 	BOOTS, 
 	RING,
 	NECKLACE
@@ -32,11 +32,15 @@ const RARITY_COLORS = {
 
 var items= {
 	RARITIES.COMMON: [load("res://Items/Equipment/BaseChestplate.tscn").instance(), 
-	load("res://Items/Equipment/BaseHelmet.tscn").instance()],
-	RARITIES.RARE: [],
+	load("res://Items/Equipment/BaseHelmet.tscn").instance(),
+	load("res://Items/Equipment/BaseBoots.tscn").instance(),
+	load("res://Items/Equipment/BaseGloves.tscn").instance(),
+	load("res://Items/Equipment/BaseRing.tscn").instance(),
+	load("res://Items/Equipment/BaseNecklace.tscn").instance()],
+	RARITIES.RARE: [load("res://Items/Equipment/CrusaderHelmet.tscn").instance()],
 }
 
-var chest = [items[RARITIES.COMMON][0]]
+var chest = items[RARITIES.COMMON]
 
 var worn_items = {
 	"Sword": load("res://Items/Weapons/Swords/BaseSword.tscn").instance(),
@@ -44,7 +48,7 @@ var worn_items = {
 	"Spear": null, 
 	"Chestplate": null, 
 	"Helmet": null, 
-	"Leggings": null, 
+	"Gloves": null, 
 	"Boots": null, 
 	"Ring": null,
 	"Necklace": null
