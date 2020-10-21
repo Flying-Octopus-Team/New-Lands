@@ -2,14 +2,14 @@
 
 [ext_resource path="res://Entities/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Entities/Player/graphics/player_spritesheet.png" type="Texture" id=2]
-[ext_resource path="res://Items/Weapons/shared/Weapon.gd" type="Script" id=3]
 [ext_resource path="res://Items/Weapons/Swords/BaseSword.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Entities/shared/HitboxArea.tscn" type="PackedScene" id=5]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 45.7888, 59.2377 )
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 47.8941
+height = 107.686
 
 [sub_resource type="Animation" id=3]
 length = 0.5
@@ -308,10 +308,10 @@ transitions = [ "Standing", "Moving", SubResource( 31 ), "Moving", "Standing", S
 start_node = "Standing"
 graph_offset = Vector2( 0, 58.434 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=37]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=38]
 
 [sub_resource type="RectangleShape2D" id=37]
-extents = Vector2( 39.4588, 132.708 )
+extents = Vector2( 46.8415, 134.958 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -321,26 +321,19 @@ movement_speed = 900
 position = Vector2( 43.6448, 30.6826 )
 rotation = 0.0
 z_index = 0
-script = ExtResource( 3 )
-
-[node name="CollisionShape2D" parent="Weapon" index="2"]
-disabled = true
 
 [node name="AnimationTree" parent="Weapon" index="3"]
 parameters/playback = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 3.1579, 82.1051 )
+position = Vector2( 4.21057, 59.9999 )
 shape = SubResource( 2 )
-
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 5
-frame = 1
-
-frame = 2
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AttackDown = SubResource( 3 )
@@ -361,7 +354,7 @@ anims/StandingUp = SubResource( 15 )
 tree_root = SubResource( 36 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 36 )
+parameters/playback = SubResource( 38 )
 parameters/Attack/blend_position = Vector2( 0.25429, 0.0948277 )
 parameters/Moving/blend_position = Vector2( 0, 0 )
 parameters/Standing/blend_position = Vector2( 0, 0 )
@@ -373,9 +366,8 @@ zoom = Vector2( 2, 2 )
 [node name="HitboxArea" parent="." instance=ExtResource( 5 )]
 
 [node name="CollisionShape2D" parent="HitboxArea" index="0"]
-position = Vector2( 5.26312, 23.7477 )
+position = Vector2( 6.31573, 24.8003 )
 shape = SubResource( 37 )
-
 
 [editable path="Weapon"]
 
