@@ -162,7 +162,7 @@ margin_right = 370.0
 margin_bottom = 370.0
 type = 4
 
-[node name="Leggings" parent="HBoxContainer/Equipment/Equipment/CenterContainer/GridContainer" instance=ExtResource( 2 )]
+[node name="Gloves" parent="HBoxContainer/Equipment/Equipment/CenterContainer/GridContainer" instance=ExtResource( 2 )]
 margin_left = 380.0
 margin_top = 190.0
 margin_right = 560.0

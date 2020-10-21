@@ -20,7 +20,6 @@ var items = EquipmentManager.worn_items
 func _ready():
 	$HitboxArea.connect("get_damage", self, "take_damage")
 	apply_items_modifiers()
-	#print(EquipmentManager.chest[0].get_name())
 
 func listen_inputs(delta):
 	var velocity = Vector2()
@@ -102,3 +101,4 @@ func die():
 	self.set_deferred("disabled", true)
 	self.visible = false
 	set_process(false)
+	get_tree().change_scene("res://Hub/Hub.tscn")
