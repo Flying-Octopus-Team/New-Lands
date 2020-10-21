@@ -3,9 +3,7 @@
 [ext_resource path="res://Entities/Enemies/graphics/dog_spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Entities/Enemies/shared/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Entities/shared/HitboxArea.tscn" type="PackedScene" id=3]
-
 [ext_resource path="res://Items/Weapons/shared/Weapon.tscn" type="PackedScene" id=4]
-
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 429.81
@@ -31,7 +29,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=4]
 step = 0.05
-
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -47,7 +44,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=5]
 step = 0.05
-
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -63,7 +59,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=6]
 step = 0.05
-
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -319,7 +314,6 @@ graph_offset = Vector2( 0, 58.256 )
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 81.1661, 79.8089 )
 
-
 [sub_resource type="Animation" id=39]
 resource_name = "EnemyAttackDown"
 step = 0.05
@@ -348,7 +342,7 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=47]
+[sub_resource type="Animation" id=40]
 resource_name = "EnemyAttackLeft"
 step = 0.05
 tracks/0/type = "value"
@@ -376,7 +370,7 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=49]
+[sub_resource type="Animation" id=41]
 resource_name = "EnemyAttackRigth"
 step = 0.05
 tracks/0/type = "value"
@@ -404,7 +398,7 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=48]
+[sub_resource type="Animation" id=42]
 resource_name = "EnemyAttackUp"
 step = 0.05
 tracks/0/type = "value"
@@ -432,45 +426,45 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=51]
+[sub_resource type="AnimationNodeAnimation" id=43]
 animation = "EnemyAttackDown"
 
-[sub_resource type="AnimationNodeAnimation" id=52]
+[sub_resource type="AnimationNodeAnimation" id=44]
 animation = "EnemyAttackRigth"
 
-[sub_resource type="AnimationNodeAnimation" id=53]
+[sub_resource type="AnimationNodeAnimation" id=45]
 animation = "EnemyAttackLeft"
 
-[sub_resource type="AnimationNodeAnimation" id=54]
+[sub_resource type="AnimationNodeAnimation" id=46]
 animation = "EnemyAttackUp"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=50]
-blend_point_0/node = SubResource( 51 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=47]
+blend_point_0/node = SubResource( 43 )
 blend_point_0/pos = Vector2( 0, 1 )
-blend_point_1/node = SubResource( 52 )
+blend_point_1/node = SubResource( 44 )
 blend_point_1/pos = Vector2( 1, 0 )
-blend_point_2/node = SubResource( 53 )
+blend_point_2/node = SubResource( 45 )
 blend_point_2/pos = Vector2( -1, 0 )
-blend_point_3/node = SubResource( 54 )
+blend_point_3/node = SubResource( 46 )
 blend_point_3/pos = Vector2( 0, -1 )
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=41]
+[sub_resource type="AnimationNodeBlendSpace2D" id=48]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=55]
+[sub_resource type="AnimationNodeStateMachineTransition" id=49]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=56]
+[sub_resource type="AnimationNodeStateMachineTransition" id=50]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachine" id=44]
-states/Attack/node = SubResource( 50 )
+[sub_resource type="AnimationNodeStateMachine" id=51]
+states/Attack/node = SubResource( 47 )
 states/Attack/position = Vector2( 504, 89 )
-states/Nothing/node = SubResource( 41 )
+states/Nothing/node = SubResource( 48 )
 states/Nothing/position = Vector2( 300, 89 )
-transitions = [ "Nothing", "Attack", SubResource( 55 ), "Attack", "Nothing", SubResource( 56 ) ]
+transitions = [ "Nothing", "Attack", SubResource( 49 ), "Attack", "Nothing", SubResource( 50 ) ]
 start_node = "Nothing"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=45]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=52]
 
 [node name="Enemy" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -525,20 +519,22 @@ rotation = 4.18879
 
 [node name="AnimationPlayer" parent="EnemyAttackHitbox" index="0"]
 anims/EnemyAttackDown = SubResource( 39 )
-anims/EnemyAttackLeft = SubResource( 47 )
-anims/EnemyAttackRigth = SubResource( 49 )
-anims/EnemyAttackUp = SubResource( 48 )
+anims/EnemyAttackLeft = SubResource( 40 )
+anims/EnemyAttackRigth = SubResource( 41 )
+anims/EnemyAttackUp = SubResource( 42 )
 
 [node name="Sprite" parent="EnemyAttackHitbox" index="1"]
 visible = false
 
 [node name="AnimationTree" type="AnimationTree" parent="EnemyAttackHitbox"]
-tree_root = SubResource( 44 )
+tree_root = SubResource( 51 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 45 )
+parameters/playback = SubResource( 52 )
 parameters/Attack/blend_position = Vector2( 0, 0 )
 parameters/Nothing/blend_position = Vector2( 0, 0 )
+
+[node name="Line2D" type="Line2D" parent="."]
 [connection signal="body_entered" from="AggroArea" to="." method="_on_AggroArea_body_entered"]
 
 [editable path="HitboxArea"]

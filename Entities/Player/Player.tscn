@@ -307,7 +307,7 @@ transitions = [ "Standing", "Moving", SubResource( 31 ), "Moving", "Standing", S
 start_node = "Standing"
 graph_offset = Vector2( 0, 58.434 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=37]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=38]
 
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 39.4588, 132.708 )
@@ -354,6 +354,7 @@ tree_root = SubResource( 36 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 37 )
+
 parameters/Attack/blend_position = Vector2( 0.25429, 0.0948277 )
 parameters/Moving/blend_position = Vector2( 0, 0 )
 parameters/Standing/blend_position = Vector2( 0, 0 )
@@ -367,6 +368,7 @@ zoom = Vector2( 3, 3 )
 [node name="CollisionShape2D" parent="HitboxArea" index="0"]
 position = Vector2( 5.26312, 23.7477 )
 shape = SubResource( 38 )
+
 
 [editable path="Weapon"]
 

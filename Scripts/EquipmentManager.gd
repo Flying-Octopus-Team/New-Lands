@@ -49,7 +49,8 @@ var items= {
 	RARITIES.LEGENDARY: [load("res://Items/Equipment/Helmets/HelmetOfAvalonTears.tscn").instance()],
 }
 
-var chest = [items[RARITIES.COMMON][0]]
+var chest = []
+
 
 var worn_items = {
 	"Sword": load("res://Items/Weapons/Swords/BaseSword.tscn").instance(),
