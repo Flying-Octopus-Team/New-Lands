@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Items/shared/Item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Items/Equipment/Helmets/graphics/upgraded_helmet.png" type="Texture" id=2]
+
+[node name="UpgradedHelmet" instance=ExtResource( 1 )]
+type = 4
+item_name = "Upgraded Helmet"
+texture = ExtResource( 2 )
+rarity = 1
+hp_modifier = 10

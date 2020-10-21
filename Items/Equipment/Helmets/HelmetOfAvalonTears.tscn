@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Items/shared/Item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Items/Equipment/Helmets/graphics/helmet_tears_of_avalon.png" type="Texture" id=2]
+
+[node name="HelmetOfAvalonTears" instance=ExtResource( 1 )]
+type = 4
+item_name = "Helmet of Avalon Tears"
+texture = ExtResource( 2 )
+rarity = 4
+hp_modifier = 50
+damage_modifier = 5
+attack_speed_modifier = -0.02

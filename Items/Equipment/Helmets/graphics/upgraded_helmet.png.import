@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rare_sword.png-0eca44fc8a778868dfe0721123f28a30.stex"
+path="res://.import/upgraded_helmet.png-ba46b7a4e5b96bf7a2a76d307fa1420a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/Weapons/Swords/graphics/rare_sword.png"
-dest_files=[ "res://.import/rare_sword.png-0eca44fc8a778868dfe0721123f28a30.stex" ]
+source_file="res://Items/Equipment/Helmets/graphics/upgraded_helmet.png"
+dest_files=[ "res://.import/upgraded_helmet.png-ba46b7a4e5b96bf7a2a76d307fa1420a.stex" ]
 
 [params]
 

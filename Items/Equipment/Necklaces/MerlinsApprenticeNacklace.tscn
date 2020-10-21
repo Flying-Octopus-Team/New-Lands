@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Items/shared/Item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Items/Equipment/Necklaces/graphics/merlins_apprentice_necklace.png" type="Texture" id=2]
+
+[node name="MerlinsApprenticeNacklace" instance=ExtResource( 1 )]
+type = 8
+item_name = "Merlin's Apprentice Nacklace"
+texture = ExtResource( 2 )
+rarity = 3
+speed_modifier = 100
+damage_modifier = 3
+attack_speed_modifier = -0.15
