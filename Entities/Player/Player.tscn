@@ -7,8 +7,9 @@
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 45.7888, 63.1555 )
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 47.8941
+height = 107.686
 
 [sub_resource type="Animation" id=3]
 length = 0.5
@@ -307,10 +308,10 @@ transitions = [ "Standing", "Moving", SubResource( 31 ), "Moving", "Standing", S
 start_node = "Standing"
 graph_offset = Vector2( 0, 58.434 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=37]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=38]
 
-[sub_resource type="RectangleShape2D" id=38]
-extents = Vector2( 39.4588, 132.708 )
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 46.8415, 134.958 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -325,13 +326,14 @@ z_index = 0
 parameters/playback = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 4.78693, 93.8211 )
+position = Vector2( 4.21057, 59.9999 )
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 5
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AttackDown = SubResource( 3 )
@@ -352,20 +354,20 @@ anims/StandingUp = SubResource( 15 )
 tree_root = SubResource( 36 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 37 )
+parameters/playback = SubResource( 38 )
 parameters/Attack/blend_position = Vector2( 0.25429, 0.0948277 )
 parameters/Moving/blend_position = Vector2( 0, 0 )
 parameters/Standing/blend_position = Vector2( 0, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 3, 3 )
+zoom = Vector2( 2, 2 )
 
 [node name="HitboxArea" parent="." instance=ExtResource( 5 )]
 
 [node name="CollisionShape2D" parent="HitboxArea" index="0"]
-position = Vector2( 5.26312, 23.7477 )
-shape = SubResource( 38 )
+position = Vector2( 6.31573, 24.8003 )
+shape = SubResource( 37 )
 
 [editable path="Weapon"]
 
