@@ -8,7 +8,7 @@ var equipped_items = {
 	"Spear": null, 
 	"Chestplate": null, 
 	"Helmet": null, 
-	"Leggings": null, 
+	"Gloves": null, 
 	"Boots": null, 
 	"Ring": null,
 	"Necklace": null
