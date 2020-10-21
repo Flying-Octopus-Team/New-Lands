@@ -102,4 +102,3 @@ func die():
 	self.set_deferred("disabled", true)
 	self.visible = false
 	set_process(false)
-	get_tree().change_scene("res://Hub/Hub.tscn")
