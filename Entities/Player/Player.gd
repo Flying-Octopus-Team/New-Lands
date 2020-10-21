@@ -20,7 +20,6 @@ var items = EquipmentManager.worn_items
 func _ready():
 	$HitboxArea.connect("get_damage", self, "take_damage")
 	apply_items_modifiers()
-	#print(EquipmentManager.chest[0].get_name())
 
 func listen_inputs(delta):
 	var velocity = Vector2()
