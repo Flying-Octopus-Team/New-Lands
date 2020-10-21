@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Items/shared/Item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Items/Equipment/graphics/base_armor.png" type="Texture" id=2]
+
+[node name="BaseChestplate" instance=ExtResource( 1 )]
+type = 3
+item_name = "Base Chestplate"
+texture = ExtResource( 2 )
+hp_modifier = 1

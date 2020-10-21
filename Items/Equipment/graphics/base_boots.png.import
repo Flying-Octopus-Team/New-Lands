@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rare_sword.png-0eca44fc8a778868dfe0721123f28a30.stex"
+path="res://.import/base_boots.png-f7ab6a58c37e33bb9c714df99a899448.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/Weapons/Swords/graphics/rare_sword.png"
-dest_files=[ "res://.import/rare_sword.png-0eca44fc8a778868dfe0721123f28a30.stex" ]
+source_file="res://Items/Equipment/graphics/base_boots.png"
+dest_files=[ "res://.import/base_boots.png-f7ab6a58c37e33bb9c714df99a899448.stex" ]
 
 [params]
 

@@ -30,12 +30,16 @@ const RARITY_COLORS = {
 	RARITIES.LEGENDARY: Color.orange
 }
 
-var chest = [load("res://Items/Weapons/Swords/BaseSword.tscn").instance(),
-			load("res://Items/Weapons/Swords/RareAxe.tscn").instance(),
-			load("res://Items/Weapons/Swords/LegendaryAxe.tscn").instance()]
+var items= {
+	RARITIES.COMMON: [load("res://Items/Equipment/BaseChestplate.tscn").instance(), 
+	load("res://Items/Equipment/BaseHelmet.tscn").instance()],
+	RARITIES.RARE: [],
+}
+
+var chest = [items[RARITIES.COMMON][0]]
 
 var worn_items = {
-	"Sword": null,
+	"Sword": load("res://Items/Weapons/Swords/BaseSword.tscn").instance(),
 	"Axe": null,
 	"Spear": null, 
 	"Chestplate": null, 
