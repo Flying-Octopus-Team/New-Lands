@@ -1,10 +1,9 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Entities/Enemies/shared/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://Entities/Enemies/graphics/bully_motion_spritesheet.png" type="Texture" id=2]
-[ext_resource path="res://Items/Weapons/shared/Weapon.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Entities/shared/HitboxArea.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Entities/Enemies/graphics/bully_attack_spritesheet.png" type="Texture" id=5]
+[ext_resource path="res://Items/Weapons/shared/Weapon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entities/shared/HitboxArea.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Entities/Enemies/graphics/dog_spritesheet.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 429.81
@@ -14,7 +13,6 @@ extents = Vector2( 80.5139, 79.9223 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "AttackDown"
-length = 1.4
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -23,34 +21,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.25 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1.35 ),
-"transitions": PoolRealArray( 1, 1.46409 ),
-"update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 2 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 1.35 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 4, 8 ]
+"values": [ 40, 41, 42, 43 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -192,10 +166,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
+"values": [ 0, 1 ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -222,10 +196,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 7, 8, 9, 10, 11 ]
+"values": [ 5, 6 ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -342,43 +316,30 @@ extents = Vector2( 81.1661, 79.8089 )
 
 [sub_resource type="Animation" id=39]
 resource_name = "EnemyAttackDown"
-length = 1.4
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/path = NodePath(".:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.8, 1.35 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 120.0, 160.0, 200.0, 240.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/path = NodePath("CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -221.722, -109.772 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("CollisionShape2D:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -59.9999 ]
+"times": PoolRealArray( 0, 0.25, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
 }
 
 [sub_resource type="Animation" id=40]
@@ -403,10 +364,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.85 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.25, 0.85 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ true, false, true ]
 }
 
 [sub_resource type="Animation" id=41]
@@ -431,10 +392,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.85 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.25, 0.85 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ true, false, true ]
 }
 
 [sub_resource type="Animation" id=42]
@@ -459,15 +420,11 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.75 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.25, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ true, false, true ]
 }
-
-[sub_resource type="CapsuleShape2D" id=53]
-radius = 35.6101
-height = 273.379
 
 [sub_resource type="AnimationNodeAnimation" id=43]
 animation = "EnemyAttackDown"
@@ -509,14 +466,15 @@ start_node = "Nothing"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=52]
 
-[node name="Bully" type="KinematicBody2D"]
+[node name="Dog" type="KinematicBody2D"]
 script = ExtResource( 1 )
+damage = 40
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 5 )
-vframes = 4
-hframes = 7
-frame = 5
+texture = ExtResource( 4 )
+vframes = 12
+hframes = 5
+frame = 1
 
 [node name="AggroArea" type="Area2D" parent="."]
 
@@ -546,18 +504,19 @@ anims/StandingUp = SubResource( 15 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 36 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 37 )
 parameters/Attack/blend_position = Vector2( 0, 0 )
 parameters/Moving/blend_position = Vector2( 0, 0 )
 parameters/Standing/blend_position = Vector2( 0, 0 )
 
-[node name="HitboxArea" parent="." instance=ExtResource( 4 )]
+[node name="HitboxArea" parent="." instance=ExtResource( 3 )]
 
 [node name="CollisionShape2D" parent="HitboxArea" index="0"]
 shape = SubResource( 38 )
 
-[node name="EnemyAttackHitbox" parent="." instance=ExtResource( 3 )]
-rotation = 4.18879
+[node name="EnemyAttackHitbox" parent="." instance=ExtResource( 2 )]
+rotation = -1.0472
 
 [node name="AnimationPlayer" parent="EnemyAttackHitbox" index="0"]
 anims/EnemyAttackDown = SubResource( 39 )
@@ -567,12 +526,6 @@ anims/EnemyAttackUp = SubResource( 42 )
 
 [node name="Sprite" parent="EnemyAttackHitbox" index="1"]
 visible = false
-
-[node name="CollisionShape2D" parent="EnemyAttackHitbox" index="2"]
-position = Vector2( -221.722, -109.772 )
-rotation = -1.0472
-shape = SubResource( 53 )
-disabled = false
 
 [node name="AnimationTree" type="AnimationTree" parent="EnemyAttackHitbox"]
 tree_root = SubResource( 51 )
