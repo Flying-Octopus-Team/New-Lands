@@ -27,3 +27,5 @@ func prepare_hud():
 	$HUD.set_player_ref(player)
 	# connecting signals
 	player.connect('hp_changed', $HUD, 'on_player_hp_changed')
+	player.connect('player_died', $HUD, 'on_player_died')
+	map.boss_room.get_node('EndGate').connect('player_enter_gate', $HUD, 'on_player_enter_gate')
