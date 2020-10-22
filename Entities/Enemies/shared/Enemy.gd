@@ -3,6 +3,7 @@ extends KinematicBody2D
 export var movement_speed = 150
 export var health = 100
 export var damage = 20
+export var drop_chance = 30
 
 onready var  animationTree = $AnimationTree
 onready var animationState = animationTree.get('parameters/playback')
@@ -84,9 +85,31 @@ func take_damage(dmg):
 		die()
 		
 func die():
+	randomize()
+	if randi() % 100 < drop_chance:
+		drop_item()
 	self.queue_free()
 	
 func get_path_to_target(target):
 	var path = map.get_simple_path(global_position, target.global_position, false)
 	return path
-	
+
+func drop_item():
+	var rarity_tier = EquipmentManager.items[get_weighted_random_rarity()]
+	var item = rarity_tier[randi() % rarity_tier.size()].instance()
+	item.get_node("Sprite").texture = item.texture
+	item.global_position = global_position
+	get_parent().get_parent().add_child(item)
+
+func get_weighted_random_rarity():
+	var random_number =  randi() % 32
+	if random_number < 16:
+		return EquipmentManager.RARITIES.COMMON
+	elif random_number < 24:
+		return EquipmentManager.RARITIES.UNCOMMON
+	elif random_number < 28:
+		return EquipmentManager.RARITIES.RARE
+	elif random_number < 31:
+		return EquipmentManager.RARITIES.EPIC
+	else:
+		return EquipmentManager.RARITIES.LEGENDARY
