@@ -9,10 +9,11 @@ Harder rooms cost more, so player won't get unfair runs, where there is a lot of
 
 signal map_drawn()
 
-export var points = 15
+export var points = 2
 # Size of each room in tiles (rooms are room_size x room_size tiles)
 export var room_size = 16
 var map
+var boss_room
 
 func _ready():
 	randomize()
@@ -85,6 +86,7 @@ func place_rooms(map) -> void:
 		room.points = map_room.get_enemy_points()
 		room.position = position
 		add_child(room)
+		boss_room = room	# after all loop, boss_room value will be last room, so it will be boss room
 
 
 # Return only types of room that the system can afford using points left

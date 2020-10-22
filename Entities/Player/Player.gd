@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal hp_changed
+signal player_died
 
 export var health = 100
 export var movement_speed = 300
@@ -101,4 +102,4 @@ func die():
 	self.set_deferred("disabled", true)
 	self.visible = false
 	set_process(false)
-	get_tree().change_scene("res://Hub/Hub.tscn")
+	emit_signal("player_died")
