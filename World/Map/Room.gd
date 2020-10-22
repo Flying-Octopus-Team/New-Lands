@@ -13,9 +13,11 @@ func _ready():
 
 
 func spawn_enemies():
+	var spawns
+	if points > 0:
+		spawns = $Spawnpoints.get_children()
 	while points > 0:
 		randomize()
-		var spawns = $Spawnpoints.get_children()
 		var spawn = spawns[randi() % spawns.size()]
 		spawns.erase(spawn)
 		var available_enemies = filter_enemies(enemies, points)
