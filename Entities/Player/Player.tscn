@@ -1,7 +1,8 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Entities/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Entities/Player/graphics/player_spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://Items/Weapons/shared/Weapon.gd" type="Script" id=3]
 [ext_resource path="res://Items/Weapons/Swords/BaseSword.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Entities/shared/HitboxArea.tscn" type="PackedScene" id=5]
 
@@ -308,9 +309,9 @@ transitions = [ "Standing", "Moving", SubResource( 31 ), "Moving", "Standing", S
 start_node = "Standing"
 graph_offset = Vector2( 0, 58.434 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=38]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=37]
 
-[sub_resource type="RectangleShape2D" id=37]
+[sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 46.8415, 134.958 )
 
 [node name="Player" type="KinematicBody2D"]
@@ -321,11 +322,15 @@ movement_speed = 900
 position = Vector2( 43.6448, 30.6826 )
 rotation = 0.0
 z_index = 0
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="Weapon" index="2"]
+disabled = true
 
 [node name="AnimationTree" parent="Weapon" index="3"]
 parameters/playback = SubResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PlayerShape" type="CollisionShape2D" parent="."]
 position = Vector2( 4.21057, 59.9999 )
 shape = SubResource( 2 )
 
@@ -354,7 +359,7 @@ anims/StandingUp = SubResource( 15 )
 tree_root = SubResource( 36 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 38 )
+parameters/playback = SubResource( 37 )
 parameters/Attack/blend_position = Vector2( 0.25429, 0.0948277 )
 parameters/Moving/blend_position = Vector2( 0, 0 )
 parameters/Standing/blend_position = Vector2( 0, 0 )
@@ -367,7 +372,7 @@ zoom = Vector2( 2, 2 )
 
 [node name="CollisionShape2D" parent="HitboxArea" index="0"]
 position = Vector2( 6.31573, 24.8003 )
-shape = SubResource( 37 )
+shape = SubResource( 38 )
 
 [editable path="Weapon"]
 
