@@ -3,7 +3,7 @@
 [ext_resource path="res://Entities/Enemies/shared/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Items/Weapons/shared/Weapon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Entities/shared/HitboxArea.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Entities/Enemies/graphics/dog_spritesheet.png" type="Texture" id=4]
+[ext_resource path="res://Entities/Enemies/graphics/new_lands_bandit.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 429.81
@@ -312,7 +312,7 @@ graph_offset = Vector2( 0, 58.256 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=37]
 
 [sub_resource type="RectangleShape2D" id=38]
-extents = Vector2( 81.1661, 79.8089 )
+extents = Vector2( 81.1661, 127.691 )
 
 [sub_resource type="Animation" id=39]
 resource_name = "EnemyAttackDown"
@@ -466,14 +466,14 @@ start_node = "Nothing"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=52]
 
-[node name="Dog" type="KinematicBody2D"]
+[node name="Bandit" type="KinematicBody2D"]
 script = ExtResource( 1 )
-damage = 40
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 4 )
 vframes = 12
 hframes = 5
+frame = 1
 
 [node name="AggroArea" type="Area2D" parent="."]
 
@@ -483,6 +483,7 @@ shape = SubResource( 1 )
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 visible = false
+position = Vector2( -7.36639, 56.4759 )
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -512,6 +513,8 @@ parameters/Standing/blend_position = Vector2( 0, 0 )
 [node name="HitboxArea" parent="." instance=ExtResource( 3 )]
 
 [node name="CollisionShape2D" parent="HitboxArea" index="0"]
+visible = false
+position = Vector2( -8.59418, 8.59415 )
 shape = SubResource( 38 )
 
 [node name="EnemyAttackHitbox" parent="." instance=ExtResource( 2 )]
