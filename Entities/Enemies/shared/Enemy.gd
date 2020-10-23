@@ -89,13 +89,11 @@ func take_damage(dmg):
 		die()
 	# modulate enemy color to give player feedback at enemy took damage
 	modulate = Color(1, 0, 0, 1)
-	print('modulate dmg', modulate)
 	modulate_timer.start(0.1)
 		
 func modulate_end():
 	modulate_timer.stop()
 	modulate = Color(1, 1, 1, 1)
-	print('modulate end', modulate)
 		
 func die():
 	randomize()
