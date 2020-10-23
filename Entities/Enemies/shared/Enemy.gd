@@ -14,8 +14,12 @@ var player_reference = null
 var is_attacking = false
 var path = []
 
+var modulate_timer = Timer.new()	# timer to end modulate at enemy took damage
+
 func _ready():
 	$HitboxArea.connect("deal_damage", self, "take_damage")
+	modulate_timer.connect("timeout",self, 'modulate_end')
+	add_child(modulate_timer)
 
 func _process(delta):
 	if(animationState.get_current_node() != "Attack"):
@@ -63,7 +67,7 @@ func chase_player(delta):
 	while distance_to_walk > 0 and path.size() > 0:
 		var distance_to_next_point = global_position.distance_to(path[0])
 		if distance_to_walk <= distance_to_next_point:
-			collision = move_and_collide(global_position.direction_to(path[0]).normalized() * movement_speed * delta)
+			move_and_slide(global_position.direction_to(path[0]).normalized() * movement_speed )
 		else:
 			global_position = path[0]
 			path = get_path_to_target(player_reference)
@@ -71,8 +75,8 @@ func chase_player(delta):
 			
 		distance_to_walk -= distance_to_next_point
 	
-	
-	if(collision):
+	for slide_count in get_slide_count():
+		collision = get_slide_collision(slide_count)
 		if collision.collider.name == "Player":
 			is_attacking = true
 			attack()
@@ -83,6 +87,13 @@ func take_damage(dmg):
 	health -= dmg
 	if health <= 0:
 		die()
+	# modulate enemy color to give player feedback at enemy took damage
+	modulate = Color(1, 0, 0, 1)
+	modulate_timer.start(0.1)
+		
+func modulate_end():
+	modulate_timer.stop()
+	modulate = Color(1, 1, 1, 1)
 		
 func die():
 	randomize()
@@ -103,11 +114,11 @@ func drop_item():
 
 func get_weighted_random_rarity():
 	var random_number =  randi() % 32
-	if random_number < 16:
+	if random_number < 18:
 		return EquipmentManager.RARITIES.COMMON
-	elif random_number < 24:
+	elif random_number < 26:
 		return EquipmentManager.RARITIES.UNCOMMON
-	elif random_number < 28:
+	elif random_number < 29:
 		return EquipmentManager.RARITIES.RARE
 	elif random_number < 31:
 		return EquipmentManager.RARITIES.EPIC

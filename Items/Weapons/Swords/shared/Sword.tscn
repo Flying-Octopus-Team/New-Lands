@@ -356,8 +356,8 @@ start_node = "Nothing"
 
 [node name="Sword" instance=ExtResource( 1 )]
 visible = false
-position = Vector2( -31.263, 38.8 )
-rotation = 4.36332
+position = Vector2( -19.53, 27.073 )
+rotation = 1.91986
 z_index = 1
 texture = ExtResource( 2 )
 
@@ -384,9 +384,11 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" parent="." index="2"]
-visible = false
 position = Vector2( -0.630249, -76.2602 )
 shape = SubResource( 5 )
+
+[node name="ColorRect" parent="CollisionShape2D" index="0"]
+visible = false
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="3"]
 tree_root = SubResource( 14 )

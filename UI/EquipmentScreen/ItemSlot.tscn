@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/EquipmentScreen/StatsTooltip.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/EquipmentScreen/ItemSlot.gd" type="Script" id=2]
+[ext_resource path="res://Assets/HelvetiPixel.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.184314, 0.145098, 0.0196078, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
 
 [node name="ItemSlot" type="Panel"]
 margin_right = 180.0
@@ -45,6 +49,7 @@ margin_right = 180.0
 margin_bottom = 180.0
 rect_min_size = Vector2( 0, 20 )
 mouse_filter = 1
+custom_fonts/font = SubResource( 2 )
 text = "Slot"
 align = 1
 valign = 1

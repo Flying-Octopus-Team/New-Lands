@@ -57,7 +57,7 @@ tracks/0/keys = {
 "values": [ 45, 46, 47, 48, 49 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=39]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -72,7 +72,7 @@ tracks/0/keys = {
 "values": [ 55, 56, 57, 58, 59 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=40]
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -88,7 +88,7 @@ tracks/0/keys = {
 "values": [ 20, 21, 22, 23 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=41]
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -104,7 +104,7 @@ tracks/0/keys = {
 "values": [ 30, 31, 32, 33 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=42]
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -120,7 +120,7 @@ tracks/0/keys = {
 "values": [ 25, 26, 27, 28 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=43]
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -136,7 +136,7 @@ tracks/0/keys = {
 "values": [ 35, 36, 37, 38 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=44]
 length = 0.5
 loop = true
 step = 0.05
@@ -153,7 +153,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=45]
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -169,7 +169,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=46]
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -185,7 +185,7 @@ tracks/0/keys = {
 "values": [ 10, 11, 12, 13 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=47]
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -316,16 +316,23 @@ extents = Vector2( 46.8415, 134.958 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
-movement_speed = 900
+movement_speed = 700
 
 [node name="Weapon" parent="." instance=ExtResource( 4 )]
-position = Vector2( 43.6448, 30.6826 )
-rotation = 0.0
-z_index = 0
+position = Vector2( -19.53, 27.073 )
+rotation = 1.91986
 script = ExtResource( 3 )
+
+[node name="ColorRect" parent="Weapon/Sprite" index="0"]
+visible = true
 
 [node name="CollisionShape2D" parent="Weapon" index="2"]
 disabled = true
+
+[node name="AttackAreaColor" parent="Weapon/CollisionShape2D" index="0"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
 
 [node name="AnimationTree" parent="Weapon" index="3"]
 parameters/playback = SubResource( 1 )
@@ -344,15 +351,15 @@ frame = 3
 anims/AttackDown = SubResource( 3 )
 anims/AttackLeft = SubResource( 4 )
 anims/AttackRight = SubResource( 5 )
-anims/AttackUp = SubResource( 6 )
-anims/MovingDown = SubResource( 7 )
-anims/MovingLeft = SubResource( 8 )
-anims/MovingRight = SubResource( 9 )
-anims/MovingUp = SubResource( 10 )
-anims/Standing = SubResource( 11 )
-anims/StandingDown = SubResource( 12 )
-anims/StandingLeft = SubResource( 13 )
-anims/StandingRight = SubResource( 14 )
+anims/AttackUp = SubResource( 39 )
+anims/MovingDown = SubResource( 40 )
+anims/MovingLeft = SubResource( 41 )
+anims/MovingRight = SubResource( 42 )
+anims/MovingUp = SubResource( 43 )
+anims/Standing = SubResource( 44 )
+anims/StandingDown = SubResource( 45 )
+anims/StandingLeft = SubResource( 46 )
+anims/StandingRight = SubResource( 47 )
 anims/StandingUp = SubResource( 15 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
