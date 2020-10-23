@@ -6,7 +6,7 @@
 [ext_resource path="res://Entities/Enemies/graphics/dog_spritesheet.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 400.0
+radius = 1500.0
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 61.3756, 44.2034 )

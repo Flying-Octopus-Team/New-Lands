@@ -9,7 +9,7 @@ Harder rooms cost more, so player won't get unfair runs, where there is a lot of
 
 signal map_drawn()
 
-export var points = 20
+export var points = 15
 # Size of each room in tiles (rooms are room_size x room_size tiles)
 export var room_size = 16
 var map
@@ -36,8 +36,8 @@ func prepare_general_map(points):
 	var room_type_costs = {
 		"empty": 0,
 		"small": 1,
-		"medium": 3,
-		"large": 5
+		"medium": 2,
+		"large": 3
 	}
 	
 	# Create entrance room

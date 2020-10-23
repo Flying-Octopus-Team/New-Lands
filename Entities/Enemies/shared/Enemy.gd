@@ -63,7 +63,7 @@ func chase_player(delta):
 	while distance_to_walk > 0 and path.size() > 0:
 		var distance_to_next_point = global_position.distance_to(path[0])
 		if distance_to_walk <= distance_to_next_point:
-			collision = move_and_collide(global_position.direction_to(path[0]).normalized() * movement_speed * delta)
+			move_and_slide(global_position.direction_to(path[0]).normalized() * movement_speed )
 		else:
 			global_position = path[0]
 			path = get_path_to_target(player_reference)
@@ -71,8 +71,8 @@ func chase_player(delta):
 			
 		distance_to_walk -= distance_to_next_point
 	
-	
-	if(collision):
+	for slide_count in get_slide_count():
+		collision = get_slide_collision(slide_count)
 		if collision.collider.name == "Player":
 			is_attacking = true
 			attack()

@@ -6,10 +6,11 @@
 [ext_resource path="res://Entities/Enemies/graphics/new_lands_bandit.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 600.0
+radius = 1750.0
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 80.5139, 129.744 )
+[sub_resource type="CapsuleShape2D" id=53]
+radius = 64.0
+height = 128.0
 
 [sub_resource type="Animation" id=3]
 resource_name = "AttackDown"
@@ -545,7 +546,7 @@ damage = 48
 texture = ExtResource( 4 )
 vframes = 12
 hframes = 5
-frame = 2
+frame = 1
 
 [node name="AggroArea" type="Area2D" parent="."]
 
@@ -555,7 +556,7 @@ shape = SubResource( 1 )
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 position = Vector2( -7.36639, 9.10748 )
-shape = SubResource( 2 )
+shape = SubResource( 53 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AttackDown = SubResource( 3 )
