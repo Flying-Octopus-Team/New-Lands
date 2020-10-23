@@ -14,7 +14,7 @@ height = 128.0
 
 [sub_resource type="Animation" id=3]
 resource_name = "AttackDown"
-length = 3.0
+length = 1.7
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -23,14 +23,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.6, 1.2, 2, 2.25, 2.5 ),
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2, 1.35, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 41, 40, 42, 43, 44, 41 ]
 }
 
 [sub_resource type="Animation" id=4]
-length = 3.0
+length = 1.7
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -39,14 +39,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.6, 1.2, 2, 2.25, 2.5 ),
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2, 1.35, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 50, 51, 52, 53, 54, 50 ]
 }
 
 [sub_resource type="Animation" id=5]
-length = 3.0
+length = 1.7
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -55,14 +55,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.6, 1.2, 2, 2.25, 2.5 ),
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2, 1.35, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 45, 46, 47, 48, 49, 45 ]
 }
 
 [sub_resource type="Animation" id=6]
-length = 3.0
+length = 1.7
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -71,7 +71,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.6, 1.2, 2, 2.25, 2.5 ),
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2, 1.35, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 55, 56, 57, 58, 59, 55 ]
@@ -334,7 +334,7 @@ extents = Vector2( 81.1661, 127.691 )
 
 [sub_resource type="Animation" id=39]
 resource_name = "EnemyAttackDown"
-length = 3.0
+length = 1.7
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("CollisionShape2D:disabled")
@@ -343,7 +343,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2, 2.5 ),
+"times": PoolRealArray( 0, 1.2, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
@@ -355,7 +355,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 2, 2.5 ),
+"times": PoolRealArray( 1.2, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -367,7 +367,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 2, 2.25, 2.5 ),
+"times": PoolRealArray( 1.2, 1.35, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 115.0, 180.0, 245.0 ]
@@ -375,7 +375,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=40]
 resource_name = "EnemyAttackLeft"
-length = 3.0
+length = 1.7
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("CollisionShape2D:disabled")
@@ -384,7 +384,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2, 2.5 ),
+"times": PoolRealArray( 0, 1.2, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
@@ -396,7 +396,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 2, 2.5 ),
+"times": PoolRealArray( 1.2, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -408,7 +408,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 2, 2.25, 2.5 ),
+"times": PoolRealArray( 1.2, 1.35, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 335.0, 270.0, 205.0 ]
@@ -416,7 +416,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=41]
 resource_name = "EnemyAttackRigth"
-length = 3.0
+length = 1.7
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("CollisionShape2D:disabled")
@@ -425,7 +425,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2, 2.5 ),
+"times": PoolRealArray( 0, 1.2, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
@@ -437,7 +437,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 2, 2.5 ),
+"times": PoolRealArray( 1.2, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -449,7 +449,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 2, 2.3, 2.5 ),
+"times": PoolRealArray( 1.2, 1.35, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 25.0, 90.0, 155.0 ]
@@ -457,7 +457,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=42]
 resource_name = "EnemyAttackUp"
-length = 3.0
+length = 1.7
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("CollisionShape2D:disabled")
@@ -466,7 +466,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2, 2.5 ),
+"times": PoolRealArray( 0, 1.2, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
@@ -478,7 +478,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 2, 2.5 ),
+"times": PoolRealArray( 1.2, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -490,7 +490,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 2, 2.25, 2.5 ),
+"times": PoolRealArray( 1.2, 1.35, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 65.0, 0.0, -65.0 ]
@@ -546,7 +546,7 @@ damage = 48
 texture = ExtResource( 4 )
 vframes = 12
 hframes = 5
-frame = 1
+frame = 3
 
 [node name="AggroArea" type="Area2D" parent="."]
 
@@ -590,7 +590,7 @@ position = Vector2( -8.59418, 8.59415 )
 shape = SubResource( 38 )
 
 [node name="EnemyAttackHitbox" parent="." instance=ExtResource( 2 )]
-rotation = 5.84685
+rotation = 4.27606
 
 [node name="AnimationPlayer" parent="EnemyAttackHitbox" index="0"]
 anims/EnemyAttackDown = SubResource( 39 )
