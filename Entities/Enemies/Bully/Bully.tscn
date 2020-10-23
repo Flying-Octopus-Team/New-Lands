@@ -649,7 +649,7 @@ damage = 22
 texture = ExtResource( 2 )
 vframes = 8
 hframes = 7
-frame = 4
+frame = 3
 
 [node name="AggroArea" type="Area2D" parent="."]
 

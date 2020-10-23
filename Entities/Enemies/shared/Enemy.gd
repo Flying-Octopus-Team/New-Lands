@@ -14,8 +14,12 @@ var player_reference = null
 var is_attacking = false
 var path = []
 
+var modulate_timer = Timer.new()	# timer to end modulate at enemy took damage
+
 func _ready():
 	$HitboxArea.connect("deal_damage", self, "take_damage")
+	modulate_timer.connect("timeout",self, 'modulate_end')
+	add_child(modulate_timer)
 
 func _process(delta):
 	if(animationState.get_current_node() != "Attack"):
@@ -83,6 +87,15 @@ func take_damage(dmg):
 	health -= dmg
 	if health <= 0:
 		die()
+	# modulate enemy color to give player feedback at enemy took damage
+	modulate = Color(1, 0, 0, 1)
+	print('modulate dmg', modulate)
+	modulate_timer.start(0.1)
+		
+func modulate_end():
+	modulate_timer.stop()
+	modulate = Color(1, 1, 1, 1)
+	print('modulate end', modulate)
 		
 func die():
 	randomize()
