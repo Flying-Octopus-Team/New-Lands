@@ -9,7 +9,7 @@ Harder rooms cost more, so player won't get unfair runs, where there is a lot of
 
 signal map_drawn()
 
-export var points = 2
+export var points = 20
 # Size of each room in tiles (rooms are room_size x room_size tiles)
 export var room_size = 16
 var map

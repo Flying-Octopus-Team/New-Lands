@@ -11,13 +11,16 @@ extents = Vector2( 10, 77 )
 position = Vector2( 40, -2 )
 rotation = 2.61799
 item_name = "Base Sword"
-damage = 50
+damage = 10
 attack_speed = 0.5
 attack_width = 150
 attack_range = 14
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource( 1 )
+
+[node name="AttackAreaColor" parent="CollisionShape2D" index="0"]
+color = Color( 1, 0, 0, 0.752941 )
 
 [node name="AnimationTree" parent="." index="3"]
 parameters/playback = SubResource( 2 )

@@ -6,10 +6,10 @@
 [ext_resource path="res://Entities/Enemies/graphics/dog_spritesheet.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 429.81
+radius = 400.0
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 80.5139, 79.9223 )
+extents = Vector2( 61.3756, 44.2034 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "AttackDown"
@@ -21,7 +21,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"times": PoolRealArray( 0, 0.5, 0.65, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 40, 41, 42, 43 ]
@@ -36,7 +36,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"times": PoolRealArray( 0, 0.5, 0.65, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 50, 51, 52, 53 ]
@@ -51,7 +51,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"times": PoolRealArray( 0, 0.5, 0.65, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 45, 46, 47, 48 ]
@@ -66,7 +66,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"times": PoolRealArray( 0, 0.5, 0.65, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 55, 56, 57, 58 ]
@@ -304,7 +304,7 @@ states/Attack/position = Vector2( 529, 259.256 )
 states/Moving/node = SubResource( 25 )
 states/Moving/position = Vector2( 646, 115 )
 states/Standing/node = SubResource( 30 )
-states/Standing/position = Vector2( 406, 115 )
+states/Standing/position = Vector2( 404, 115 )
 transitions = [ "Standing", "Moving", SubResource( 31 ), "Moving", "Standing", SubResource( 32 ), "Standing", "Attack", SubResource( 33 ), "Attack", "Standing", SubResource( 34 ), "Moving", "Attack", SubResource( 35 ) ]
 start_node = "Standing"
 graph_offset = Vector2( 0, 58.256 )
@@ -324,10 +324,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.25, 0.5, 0.65, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 120.0, 160.0, 200.0, 240.0 ]
+"values": [ 120.0, 160.0, 200.0, 180.0, 180.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CollisionShape2D:disabled")
@@ -336,10 +336,22 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.25, 0.75 ),
+"times": PoolRealArray( 0, 0.65, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D/AttackAreaColor:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.65, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=40]
@@ -352,10 +364,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.45, 0.85 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.45, 0.65, 0.8, 0.85 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -45.0, -85.0, -135.0 ]
+"values": [ -45.0, -85.0, -90.0, -90.0, -135.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CollisionShape2D:disabled")
@@ -364,10 +376,34 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.25, 0.85 ),
+"times": PoolRealArray( 0, 0.65, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D/AttackAreaColor:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.65, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.65, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 40 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=41]
@@ -380,10 +416,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.45, 0.85 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.45, 0.65, 0.8, 0.85 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 135.0, 85.0, 45.0 ]
+"values": [ 135.0, 85.0, 90.0, 90.0, 45.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CollisionShape2D:disabled")
@@ -392,10 +428,34 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.25, 0.85 ),
+"times": PoolRealArray( 0, 0.65, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D/AttackAreaColor:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.65, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.65, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 40 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=42]
@@ -408,10 +468,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.25, 0.5, 0.65, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 60.0, 20.0, -20.0, -60.0 ]
+"values": [ 60.0, 20.0, -20.0, 0.0, 0.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CollisionShape2D:disabled")
@@ -420,10 +480,22 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.25, 0.75 ),
+"times": PoolRealArray( 0, 0.65, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D/AttackAreaColor:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.65, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=43]
@@ -468,13 +540,15 @@ start_node = "Nothing"
 
 [node name="Dog" type="KinematicBody2D"]
 script = ExtResource( 1 )
-damage = 40
+movement_speed = 1000
+health = 10
+damage = 10
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 4 )
 vframes = 12
 hframes = 5
-frame = 1
+frame = 10
 
 [node name="AggroArea" type="Area2D" parent="."]
 
@@ -484,6 +558,7 @@ shape = SubResource( 1 )
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 visible = false
+position = Vector2( 0.814514, 35.0238 )
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -508,15 +583,16 @@ active = true
 parameters/playback = SubResource( 37 )
 parameters/Attack/blend_position = Vector2( 0, 0 )
 parameters/Moving/blend_position = Vector2( 0, 0 )
-parameters/Standing/blend_position = Vector2( 0, 0 )
+parameters/Standing/blend_position = Vector2( -0.25585, -0.0517242 )
 
 [node name="HitboxArea" parent="." instance=ExtResource( 3 )]
 
 [node name="CollisionShape2D" parent="HitboxArea" index="0"]
+visible = false
 shape = SubResource( 38 )
 
 [node name="EnemyAttackHitbox" parent="." instance=ExtResource( 2 )]
-rotation = -1.0472
+rotation = 3.14159
 
 [node name="AnimationPlayer" parent="EnemyAttackHitbox" index="0"]
 anims/EnemyAttackDown = SubResource( 39 )
@@ -527,12 +603,18 @@ anims/EnemyAttackUp = SubResource( 42 )
 [node name="Sprite" parent="EnemyAttackHitbox" index="1"]
 visible = false
 
+[node name="AttackAreaColor" parent="EnemyAttackHitbox/CollisionShape2D" index="0"]
+margin_left = -70.0
+margin_top = -70.0
+margin_right = 70.0
+margin_bottom = 70.0
+
 [node name="AnimationTree" type="AnimationTree" parent="EnemyAttackHitbox"]
 tree_root = SubResource( 51 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 52 )
-parameters/Attack/blend_position = Vector2( 0, 0 )
+parameters/Attack/blend_position = Vector2( 0.24649, 0.00531912 )
 parameters/Nothing/blend_position = Vector2( 0, 0 )
 
 [node name="Line2D" type="Line2D" parent="."]

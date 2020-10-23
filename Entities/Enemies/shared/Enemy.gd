@@ -103,11 +103,11 @@ func drop_item():
 
 func get_weighted_random_rarity():
 	var random_number =  randi() % 32
-	if random_number < 16:
+	if random_number < 18:
 		return EquipmentManager.RARITIES.COMMON
-	elif random_number < 24:
+	elif random_number < 26:
 		return EquipmentManager.RARITIES.UNCOMMON
-	elif random_number < 28:
+	elif random_number < 29:
 		return EquipmentManager.RARITIES.RARE
 	elif random_number < 31:
 		return EquipmentManager.RARITIES.EPIC
