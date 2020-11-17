@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Items/Equipment/Necklaces/graphics/base_necklace.png" type="Texture" id=1]
+[ext_resource path="res://Items/shared/Item.tscn" type="PackedScene" id=2]
+
+[node name="BaseNecklace" instance=ExtResource( 2 )]
+type = 8
+item_name = "Base Necklace"
+texture = ExtResource( 1 )
+damage_modifier = 1
